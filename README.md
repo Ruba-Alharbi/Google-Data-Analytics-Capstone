@@ -90,6 +90,97 @@ member_casual |This attribute shows the Member or Casual rider | member
 ## Process
 ### Tool
 I'm using MySQL for this phase; because the dataset is too big to handle with spreadsheet software.
+##### After downlowding the datasets I imported to my machine in MySQL, then I created a new table called **cyclistic** contaning the months of the year.
+```
+USE bike_share;
+
+# Create new table with bike usage data for the year 2023
+DROP TABLE IF EXISTS cyclistic;
+CREATE TABLE cyclistic AS 
+(
+SELECT 
+	DISTINCT *
+FROM 
+	january
+) 
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	february
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	march
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	april
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	may
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	june
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	july
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	august
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	september
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	october
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	november
+)
+UNION ALL
+(
+SELECT
+	DISTINCT *
+FROM 
+	december
+)
+```
 ### Data Cleaning 
 #### Checklist:
 - [x] Dataset size -> 1,065,153 rows

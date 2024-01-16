@@ -1,5 +1,5 @@
-# Google-Data-Analytics-Capstone
-A case study for Google  Data Analytics Professional Certificate. Track 1: Bike-Share
+# Google Data Analytics Capstone
+A case study for Google Data Analytics Professional Certificate. Track 1: Bike-Share
 
 # Deliverables
 - [x] A clear statement of the business task
@@ -182,11 +182,60 @@ FROM
 )
 ```
 ### Data Cleaning 
-#### Checklist:
-- [x] Dataset size -> 1,065,153 rows
-- [x] Adding additional attributes -> 1. Month, 2.  Day of the Week, 3. hour, 4. Date, 5. Ride Length
-- [x] Incorrect data 
-- [x] Missing values -> 242,643 rows
-- [x] Duplicate -> No duplicates
+- Dataset size -> 5,523,188 rows
+- Adding additional attributes -> 1. Month, 2. Date, 3. Day of the Week, 4. hour, 5. Ride Length
+ ```
+  -- Add new attributes
+ALTER TABLE cyclistic
+ADD COLUMN month INT,
+ADD COLUMN ride_date DATE,
+ADD COLUMN day_of_week VARCHAR(20),
+ADD COLUMN hour INT,
+ADD COLUMN ride_length_minutes INT;
+
+-- Set values
+UPDATE cyclistic
+SET
+    month = MONTH(started_at),
+    ride_date = DATE(started_at),
+    day_of_week = DAYNAME(started_at),
+    hour = HOUR(started_at),
+    ride_length = TIMEDIFF(ended_at, started_at);
+  ```
+-  Missing values -> 1,290,437 rows 
+  To prevent losing data I created new category for missing data as "Unknown"
+  ```
+-- Check for missing values   
+SELECT
+	*
+FROM 
+	cyclistic
+WHERE
+    start_station_id = "" OR
+    start_station_name = "" OR
+    end_station_id = ""  OR
+    end_station_name = ""   ;
+    
+-- Fixing missing values by adding new category as Unknown
+UPDATE cyclistic
+SET start_station_id = "Unknown"
+WHERE start_station_id = "" ; 
+
+UPDATE cyclistic
+SET start_station_name = "Unknown"
+WHERE start_station_name = "" ; 
+
+ UPDATE cyclistic
+SET end_station_id = "Unknown"
+WHERE end_station_id = "" ; 
+
+UPDATE cyclistic
+SET end_station_name = "Unknown"
+WHERE end_station_name = "" ; 
+
+``` 
+-  Incorrect data
+  
+-  Duplicate -> No duplicates
 
 #### Code

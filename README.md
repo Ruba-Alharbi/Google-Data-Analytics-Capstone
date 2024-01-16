@@ -90,11 +90,11 @@ member_casual |This attribute shows the Member or Casual rider | member
 ## Process
 ### Tool
 I'm using MySQL for this phase; because the dataset is too big to handle with spreadsheet software.
-##### After downlowding the datasets I imported to my machine in MySQL, then I created a new table called **cyclistic** contaning the months of the year.
+##### After downloading the datasets I imported them to my machine in MySQL, and then I created a new table called **cyclistic** containing the months of the year.
 ```
 USE bike_share;
 
-# Create new table with bike usage data for the year 2023
+# Create a new table with bike usage data for the year 2023
 DROP TABLE IF EXISTS cyclistic;
 CREATE TABLE cyclistic AS 
 (
@@ -202,8 +202,8 @@ SET
     hour = HOUR(started_at),
     ride_length = TIMEDIFF(ended_at, started_at);
   ```
--  Missing values -> 1,290,437 rows 
-  To prevent losing data I created new category for missing data as "Unknown"
+-  Missing values -> 1,290,437 rows.
+  To prevent losing data I created a new category for missing data as "Unknown"
   ```
 -- Check for missing values   
 SELECT
@@ -216,7 +216,7 @@ WHERE
     end_station_id = ""  OR
     end_station_name = ""   ;
     
--- Fixing missing values by adding new category as Unknown
+-- Fixing missing values by adding a new category as Unknown
 UPDATE cyclistic
 SET start_station_id = "Unknown"
 WHERE start_station_id = "" ; 
@@ -234,8 +234,8 @@ SET end_station_name = "Unknown"
 WHERE end_station_name = "" ; 
 
 ``` 
--  Incorrect data
-After verifying that there were no miss entries in the ride ID, I looked at the station names and discovered that one was incorrect—Streeter Dr./Grand Ave.—and fixed it. Next, I verified that the location entries were proper.
+-  Incorrect data -> 
+After verifying that there were no missing entries in the ride ID, I looked at the station names and discovered that one was incorrect—Streeter Dr./Grand Ave.—and fixed it. Next, I verified that the location entries were proper.
   ```
 -- Check for incorrect data 
 SELECT LENGTH(ride_id)

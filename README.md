@@ -271,4 +271,8 @@ FROM cyclistic;
 ```
 -  Duplicate -> No duplicates
 
-#### Code
+## Analyze
+
+## Share
+
+## Act

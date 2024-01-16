@@ -4,7 +4,7 @@ A case study for Google Data Analytics Professional Certificate. Track 1: Bike-S
 # Deliverables
 - [x] A clear statement of the business task
 - [x] A description of all data sources used
-- [ ] Documentation of any cleaning or manipulation of data
+- [x] Documentation of any cleaning or manipulation of data
 - [ ] A summary of your analysis
 - [ ] Supporting visualizations and key findings
 - [ ] Your top three recommendations based on your analysis
@@ -235,7 +235,40 @@ WHERE end_station_name = "" ;
 
 ``` 
 -  Incorrect data
-  
+After verifying that there were no miss entries in the ride ID, I looked at the station names and discovered that one was incorrect—Streeter Dr./Grand Ave.—and fixed it. Next, I verified that the location entries were proper.
+  ```
+-- Check for incorrect data 
+SELECT LENGTH(ride_id)
+From cyclistic
+GROUP BY 1;
+
+SELECT
+DISTINCT start_station_name
+From cyclistic
+GROUP BY 1;
+
+SELECT
+DISTINCT end_station_name
+From cyclistic
+GROUP BY 1;
+
+UPDATE cyclistic
+SET end_station_name = 'Street Dr/Grand Ave'
+WHERE end_station_name = 'Streeter Dr/Grand Ave'; -- 182 rows affected  
+
+UPDATE cyclistic
+SET start_station_name = 'Street Dr/Grand Ave'
+WHERE start_station_name = 'Streeter Dr/Grand Ave'; -- 180 rows affected 
+
+-- Check for (latitude, longitude)
+SELECT DISTINCT 
+	start_station_name ,
+	CONCAT(ROUND(start_lat,2), ", ",ROUND(start_lng,2)) AS start_location,
+    end_station_name,
+    CONCAT(ROUND(end_lat,2), ", " ,ROUND(end_lng,2)) AS end_location
+FROM cyclistic;
+
+```
 -  Duplicate -> No duplicates
 
 #### Code

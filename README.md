@@ -98,87 +98,63 @@ USE bike_share;
 DROP TABLE IF EXISTS cyclistic;
 CREATE TABLE cyclistic AS 
 (
-SELECT 
-	DISTINCT *
-FROM 
-	january
+SELECT DISTINCT *
+FROM january
 ) 
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	february
+SELECT DISTINCT *
+FROM february
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	march
+SELECT DISTINCT *
+FROM march
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	april
+SELECT DISTINCT *
+FROM april
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	may
+SELECT DISTINCT *
+FROM may
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	june
+SELECT DISTINCT *
+FROM june
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	july
+SELECT DISTINCT *
+FROM july
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	august
+SELECT DISTINCT *
+FROM august
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	september
+SELECT DISTINCT *
+FROM september
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	october
+SELECT DISTINCT *
+FROM october
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	november
+SELECT DISTINCT *
+FROM november
 )
 UNION ALL
 (
-SELECT
-	DISTINCT *
-FROM 
-	december
+SELECT DISTINCT *
+FROM december
 )
 ```
 ### Data Cleaning 
@@ -191,7 +167,7 @@ ADD COLUMN month INT,
 ADD COLUMN ride_date DATE,
 ADD COLUMN day_of_week VARCHAR(20),
 ADD COLUMN hour INT,
-ADD COLUMN ride_length_minutes INT;
+ADD COLUMN ride_length TIME;
 
 -- Set values
 UPDATE cyclistic
@@ -233,7 +209,8 @@ UPDATE cyclistic
 SET end_station_name = "Unknown"
 WHERE end_station_name = "" ; 
 
-``` 
+```
+-  Duplicate -> No duplicates
 -  Incorrect data -> 
 After verifying that there were no missing entries in the ride ID, I looked at the station names and discovered that one was incorrect—Streeter Dr./Grand Ave.—and fixed it. Next, I verified that the location entries were proper.
   ```
@@ -269,7 +246,6 @@ SELECT DISTINCT
 FROM cyclistic;
 
 ```
--  Duplicate -> No duplicates
 
 ## Analyze
 

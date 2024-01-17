@@ -212,9 +212,9 @@ WHERE end_station_name = "" ;
 ```
 -  Duplicate -> No duplicates
 -  Incorrect data -> 
-After verifying that there were no missing entries in the ride ID, I looked at the station names and discovered that one was incorrect—Streeter Dr./Grand Ave.—and fixed it. Next, I verified that the location entries were proper.
+After verifying that there were no missing entries in the ride ID, I looked at the station names and discovered that one was incorrect—Streeter Dr./Grand Ave.—and fixed it. Next, I verified that the location entries were proper. Then I executed some queries to check for incorrect ride length values. The first query is to examine the values of start and end dates, ride time, and duration. I also looked for the minimum, average, and maximum duration, when I saw that there were several zeros and negative values, I decided to remove them.
   ```
--- Check for incorrect data 
+-- Checking for incorrect data 
 SELECT LENGTH(ride_id)
 From cyclistic
 GROUP BY 1;
@@ -230,12 +230,20 @@ From cyclistic
 GROUP BY 1;
 
 UPDATE cyclistic
-SET end_station_name = 'Street Dr/Grand Ave'
+SET end_station_name = 'Street Dr & Grand Ave'
 WHERE end_station_name = 'Streeter Dr/Grand Ave'; -- 182 rows affected  
 
 UPDATE cyclistic
-SET start_station_name = 'Street Dr/Grand Ave'
+SET start_station_name = 'Street Dr & Grand Ave'
 WHERE start_station_name = 'Streeter Dr/Grand Ave'; -- 180 rows affected 
+
+UPDATE cyclistic
+SET end_station_name = 'Street Dr & Grand Ave'
+WHERE end_station_name = 'Streeter Dr & Grand Ave'; -- 64379 rows affected  
+
+UPDATE cyclistic
+SET start_station_name = 'Street Dr & Grand Ave'
+WHERE start_station_name = 'Streeter Dr & Grand Ave'; -- 61584 rows affected
 
 -- Check for (latitude, longitude)
 SELECT DISTINCT 
@@ -245,6 +253,26 @@ SELECT DISTINCT
     CONCAT(ROUND(end_lat,2), ", " ,ROUND(end_lng,2)) AS end_location
 FROM cyclistic;
 
+-- Checking ride length 
+SELECT 
+    started_at,
+    ended_at,
+    ride_length,
+    member_casual
+  FROM
+	cyclistic
+ORDER BY  3 DESC;  
+
+SELECT 
+    TIME(MIN(ride_length)),
+    CAST(AVG(ride_length) AS TIME),
+    TIME(MAX(ride_length))
+  FROM
+	cyclistic;  
+    
+-- Deleting negative and zero values
+DELETE FROM cyclistic
+WHERE ride_length <= '00:00:00' ; -- 1243 row(s) affected
 ```
 
 ## Analyze

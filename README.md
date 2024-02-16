@@ -5,7 +5,7 @@ A case study for Google Data Analytics Professional Certificate. Track 1: Bike-S
 - [x] A clear statement of the business task
 - [x] A description of all data sources used
 - [x] Documentation of any cleaning or manipulation of data
-- [ ] A summary of your analysis
+- [x] A summary of your analysis
 - [ ] Supporting visualizations and key findings
 - [ ] Your top three recommendations based on your analysis
 
@@ -276,6 +276,7 @@ WHERE ride_length <= '00:00:00' ; -- 1243 row(s) affected
 ```
 
 ## Analyze
+Analysis was done using SQL. You can see the analysis result [here](RideData_analysis.sql)
 
 ## Share
 

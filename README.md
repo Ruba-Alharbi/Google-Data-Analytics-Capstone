@@ -97,65 +97,41 @@ USE bike_share;
 # Create a new table with bike usage data for the year 2023
 DROP TABLE IF EXISTS cyclistic;
 CREATE TABLE cyclistic AS 
-(
-SELECT DISTINCT *
-FROM january
-) 
+(SELECT DISTINCT *
+FROM january) 
 UNION ALL
-(
-SELECT DISTINCT *
-FROM february
-)
+(SELECT DISTINCT *
+FROM february)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM march
-)
+(SELECT DISTINCT *
+FROM march)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM april
-)
+(SELECT DISTINCT *
+FROM april)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM may
-)
+(SELECT DISTINCT *
+FROM may)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM june
-)
+(SELECT DISTINCT *
+FROM june)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM july
-)
+(SELECT DISTINCT *
+FROM july)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM august
-)
+(SELECT DISTINCT *
+FROM august)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM september
-)
+(SELECT DISTINCT *
+FROM september)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM october
-)
+(SELECT DISTINCT *
+FROM october)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM november
-)
+(SELECT DISTINCT *
+FROM november)
 UNION ALL
-(
-SELECT DISTINCT *
-FROM december
-)
+(SELECT DISTINCT *
+FROM december)
 ```
 ### Data Cleaning 
 - Dataset size -> 5,523,188 rows
@@ -281,18 +257,26 @@ Analysis was done using SQL. You can see the analysis result [here](RideData_ana
 ## Share
 ### 1. Rider's Behavior on Weekdays vs Weekends:
 [Viz link](https://public.tableau.com/views/UserBehavioronWeekendsandWeekdays/Dashboard2?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
-#### key findings
+#### key findings:
 **Weekdays**
 - Member
-	* The top start station form member is (Clark St & Elm St), where the end station (Kingsbury St & Kinzie St) representing 15,982 and 18,140 rides.
-	* **Clark St & Elm St** and **Kingsbury St & Kinzie St** stations has the highest rides in Septemper 2,704 and 3,008 where the lowest total rides is in Febuarary by 697 and 850 	rides respectively.
-	* Member faviort hours for a bike are between 4:00 pm / 5:00 pm.
+	* The top start station form member is (Clark St & Elm St), where the end station (Kingsbury St & Kinzie St) represents 15,982 and 18,140 rides.
+	* **Clark St & Elm St** and **Kingsbury St & Kinzie St** stations have the highest number of rides in September 2,704 and 3,008 whereas the lowest total rides are in February with 697 and 850, respectively.
+	* Member favorite hours for a bike are between 4:00 pm / 5:00 pm.
 - Casual 
-	* The top start and end stations form casual is (Street Dr & Grand Ave) representing 25,145 and 28,482 rides.
-	* **Street Dr & Grand Ave** station has the highest rides in **July** 5,073 and 5,553 where the lowest total rides is in January by 226 and 256 rides respectively.
-	* Casual faviort hours for a bike are between 1:00 pm / 5:00 pm.
+	* The top start and end stations for casual are (Street Dr & Grand Ave) representing 25,145 and 28,482 rides.
+	* **Street Dr & Grand Ave** station has the highest number of rides in **July** 5,073 and 5,553; the lowest total rides are in January by 226 and 256, respectively.
+	* Casual favorite hours for a bike are between 1:00 pm / 5:00 pm.
 
-* Favorite bike types for members are: Classic and Electric bikes respectively whereas for casuals Electric, Classic, and Docked bikes respectively.
-* Riders use bike share bikes on weekdays more than on weekends by approximately 171.81% for members and by approximately  83.60% for casuals.
-  
+* Favorite bike types for members are Classic and Electric bikes respectively whereas for casuals Electric, Classic, and Docked bikes respectively.
+* Riders use bike share bikes on weekdays more than on weekends by approximately 171.81% for members and 83.60% for casuals.
+
+### 2. Rider's Behavior on Special Holidays:
+[Viz link](https://public.tableau.com/views/SpecialHolidaysAnalysis/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+#### key findings:
+- Valentine's Day
+	* The Total rides were 7,271 for members, where 53.33% was for Classic bikes, and
+	* The peak hours were from 4 pm to 5 pm with 857 and 888 as total rides, there was a slight increase in the number of rides from 7 AM to 8 AM, whereas in the early morning, there was a significant drop reaching a low of 3 rides at 3 AM.
+	* The Total rides were 1837 for casuals, where **Electric bikes** accounted for 61% of all bike usage, significantly higher than the traditional bikes.
+
 ## Act

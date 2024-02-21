@@ -6,7 +6,7 @@ A case study for Google Data Analytics Professional Certificate. Track 1: Bike-S
 - [x] A description of all data sources used
 - [x] Documentation of any cleaning or manipulation of data
 - [x] A summary of your analysis
-- [ ] Supporting visualizations and key findings
+- [x] Supporting visualizations and key findings
 - [ ] Your top three recommendations based on your analysis
 
 # Table of content
@@ -279,5 +279,20 @@ WHERE ride_length <= '00:00:00' ; -- 1243 row(s) affected
 Analysis was done using SQL. You can see the analysis result [here](RideData_analysis.sql)
 
 ## Share
+### 1. Rider's Behavior on Weekdays vs Weekends:
+[Viz link](https://public.tableau.com/views/UserBehavioronWeekendsandWeekdays/Dashboard2?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+#### key findings
+**Weekdays**
+- Member
+	* The top start station form member is (Clark St & Elm St), where the end station (Kingsbury St & Kinzie St) representing 15,982 and 18,140 rides.
+	* **Clark St & Elm St** and **Kingsbury St & Kinzie St** stations has the highest rides in Septemper 2,704 and 3,008 where the lowest total rides is in Febuarary by 697 and 850 	rides respectively.
+	* Member faviort hours for a bike are between 4:00 pm / 5:00 pm.
+- Casual 
+	* The top start and end stations form casual is (Street Dr & Grand Ave) representing 25,145 and 28,482 rides.
+	* **Street Dr & Grand Ave** station has the highest rides in **July** 5,073 and 5,553 where the lowest total rides is in January by 226 and 256 rides respectively.
+	* Casual faviort hours for a bike are between 1:00 pm / 5:00 pm.
 
+* Favorite bike types for members are: Classic and Electric bikes respectively whereas for casuals Electric, Classic, and Docked bikes respectively.
+* Riders use bike share bikes on weekdays more than on weekends by approximately 171.81% for members and by approximately  83.60% for casuals.
+  
 ## Act

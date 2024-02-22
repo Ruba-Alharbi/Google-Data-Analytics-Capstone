@@ -7,7 +7,7 @@ A case study for Google Data Analytics Professional Certificate. Track 1: Bike-S
 - [x] Documentation of any cleaning or manipulation of data
 - [x] A summary of your analysis
 - [x] Supporting visualizations and key findings
-- [ ] Your top three recommendations based on your analysis
+- [x] Your top three recommendations based on your analysis
 
 # Table of content
 - [Overview](#Overview)
@@ -287,5 +287,9 @@ Analysis was done using SQL. You can see the analysis result [here](RideData_ana
 	* Casuals made 1837 rides, where **Electric bikes** accounted for 61.07% of all bike usage, significantly higher than the traditional bikes.
  	* Similar to members, casuals' usage was lower in the early morning, increased slightly by 8 AM to 129 rides overall, and then increased substantially in the evening. 
 
- 
 ## Act
+My analysis leads me to suggest the following:
+1. Expand the number of bikes in the stations at **Street Dr. & Grand Ave** and **Clark St & Elm St**, particularly during the **Summer**.
+2. Attract casual riders by offering additional services on the weekends.
+3. Since **classic** and **electric** bikes are preferred by casual riders, supply more of them.
+4.  More research is needed regarding the short ride duration ("more resources"). 

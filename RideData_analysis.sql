@@ -83,7 +83,7 @@ ORDER BY
 LIMIT
 	5;
 
--- Total ride in weekend VS. weekday
+-- Total rides on weekend VS. weekday
  SELECT
 	CASE 
 		WHEN day_of_week = 'Friday' OR day_of_week = 'Saturday' THEN 'Weekend'
@@ -99,7 +99,7 @@ GROUP BY
     month,
     member_casual;    
 
- -- Users behavior in the weekend VS weekday
+ -- Users' behavior on the weekend VS weekday
 SELECT
 	DISTINCT CASE 
 		WHEN day_of_week = 'Friday' OR day_of_week = 'Saturday' THEN 'Weekend'
@@ -125,11 +125,11 @@ ORDER BY
 	1,
     4 DESC;     
     
--- √ Special Holidays > Valentines's Day, Ester Sunday, Independence Day, Labor Day, Halloween, Thanksgiving, Christmas
+-- √ Special Holidays > Valentines's Day, Easter Sunday, Independence Day, Labor Day, Halloween, Thanksgiving, Christmas
 SELECT
 	COUNT(ride_id) AS total_ride,
 	CASE
-		WHEN ride_date  = '2023-02-14' THEN "Valentines's Day" 
+		WHEN ride_date  = '2023-02-14' THEN "Valentine's Day" 
 		WHEN ride_date  = '2023-04-09' THEN 'Ester Sunday'
 		WHEN ride_date  = '2023-07-04' THEN 'Independence Day'
 		WHEN ride_date  = '2023-09-04' THEN 'Labor Day'
@@ -151,7 +151,7 @@ GROUP BY
 HAVING 
 	special_days != ''; 
 
--- √ Seasonal Activites in bike ride
+-- √ Seasonal Activities in bike ride
 SELECT
 	member_casual,
     case 
@@ -160,12 +160,18 @@ SELECT
         WHEN month IN (6, 7, 8) THEN 'Summer'
         ELSE 'Fall'
 	END season,
+    day_of_week,
+    hour,
     count(ride_id) total_ride
 FROM
 	cyclistic
 GROUP BY
 	member_casual,
-    season
+    season,
+    day_of_week,
+    hour
 ORDER BY   
 	member_casual,
-    season
+    season,
+    day_of_week,
+    hour;

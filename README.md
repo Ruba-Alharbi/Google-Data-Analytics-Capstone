@@ -260,7 +260,7 @@ Analysis was done using SQL. You can see the analysis result [here](RideData_ana
 #### key findings:
 **Weekdays**
 - Member
-	* The top start station form member is (Clark St & Elm St), where the end station (Kingsbury St & Kinzie St) represents 15,982 and 18,140 rides.
+	* The top start station for members is (Clark St & Elm St), where the end station (Kingsbury St & Kinzie St) represents 15,982 and 18,140 rides.
 	* **Clark St & Elm St** and **Kingsbury St & Kinzie St** stations have the highest number of rides in September 2,704 and 3,008 whereas the lowest total rides are in February with 697 and 850, respectively.
 	* Member favorite hours for a bike are between 4:00 pm / 5:00 pm.
 - Casual 
@@ -268,15 +268,24 @@ Analysis was done using SQL. You can see the analysis result [here](RideData_ana
 	* **Street Dr & Grand Ave** station has the highest number of rides in **July** 5,073 and 5,553; the lowest total rides are in January by 226 and 256, respectively.
 	* Casual favorite hours for a bike are between 1:00 pm / 5:00 pm.
 
-* Favorite bike types for members are Classic and Electric bikes respectively whereas for casuals Electric, Classic, and Docked bikes respectively.
-* Riders use bike share bikes on weekdays more than on weekends by approximately 171.81% for members and 83.60% for casuals.
+* Favorite bike types for members are Classic and Electric bikes whereas for casuals Electric, Classic, and Docked bikes respectively.
+* Riders use bike share bikes on weekdays more than on weekends by approximately 55.25% for members and 48.10% for casuals.
 
-### 2. Rider's Behavior on Special Holidays:
+### 2. Seasonal Rides Analysis:
+[Viz link](https://public.tableau.com/views/SeasonalRideAnalysis/SeasonalRidesDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+#### key findings:
+* **Summer** is the favorite season, as the rides of members and casuals count for 37.08% and 47.57% respectively, whereas **Winter** is the least favorite.
+* The most use of bikes in the **Summer** by **members** is on the weekdays, especially at 8 in the morning and 5 PM when people leave and come from work, whereas the **casuals** ride the most on weekends from 10 AM to 7 PM.
+
+
+### 3. Rider's Behavior on Special Holidays:
 [Viz link](https://public.tableau.com/views/SpecialHolidaysAnalysis/Dashboard1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 #### key findings:
 - Valentine's Day
-	* The Total rides were 7,271 for members, where 53.33% was for Classic bikes, and
+	* Members made 7,271 rides, as 53.33% of their rides they rode a Classic bike.
 	* The peak hours were from 4 pm to 5 pm with 857 and 888 as total rides, there was a slight increase in the number of rides from 7 AM to 8 AM, whereas in the early morning, there was a significant drop reaching a low of 3 rides at 3 AM.
-	* The Total rides were 1837 for casuals, where **Electric bikes** accounted for 61% of all bike usage, significantly higher than the traditional bikes.
+	* Casuals made 1837 rides, where **Electric bikes** accounted for 61.07% of all bike usage, significantly higher than the traditional bikes.
+ 	* Similar to members, casuals' usage was lower in the early morning, increased slightly by 8 AM to 129 rides overall, and then increased substantially in the evening. 
+
  
 ## Act

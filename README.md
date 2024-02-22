@@ -278,5 +278,5 @@ Analysis was done using SQL. You can see the analysis result [here](RideData_ana
 	* The Total rides were 7,271 for members, where 53.33% was for Classic bikes, and
 	* The peak hours were from 4 pm to 5 pm with 857 and 888 as total rides, there was a slight increase in the number of rides from 7 AM to 8 AM, whereas in the early morning, there was a significant drop reaching a low of 3 rides at 3 AM.
 	* The Total rides were 1837 for casuals, where **Electric bikes** accounted for 61% of all bike usage, significantly higher than the traditional bikes.
-
+ 
 ## Act
